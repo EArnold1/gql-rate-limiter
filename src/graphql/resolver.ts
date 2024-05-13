@@ -1,6 +1,8 @@
-export const AppResolver = {
+import { Resolvers } from './types/graphql';
+
+export const AppResolver: Resolvers = {
   Query: {
-    getUsers: () => {
+    getUsers: (_, args, { req }) => {
       return [
         {
           id: 1,
