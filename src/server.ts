@@ -35,11 +35,7 @@ class App {
       '/graphql',
       cors<cors.CorsRequest>(),
       bodyParser.json(),
-      expressMiddleware(GqlServer, {
-        context: async ({ req }) => ({
-          req, // return request object
-        }),
-      })
+      expressMiddleware(GqlServer)
     );
   }
 
